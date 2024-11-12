@@ -4,7 +4,8 @@ const todoControl = document.querySelector('.todo-control');
 const headerInput = document.querySelector('.header-input');
 const todoList = document.querySelector('.todo-list');
 const todoCompleted = document.querySelector('.todo-completed');
-
+const getData = (key) => JSON.parse(localStorage.getItem(key)) || [];
+const setData = (key, value) => localStorage.setItem(key, JSON.stringify(value));
 const todoData = localStorage.getItem("todoData") ? JSON.parse(localStorage.getItem("todoData")) : [];
 
 const render = function() {
